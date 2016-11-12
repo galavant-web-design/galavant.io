@@ -1,0 +1,105 @@
+
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+html {
+  font-size: 16px;
+  min-height: 100%;
+}
+
+body {
+  background-image: url(images/ireland.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100%;
+}
+
+header, section {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+.company {
+  padding-left: 2rem;
+}
+
+
+
+h1 {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #9FB0C1;
+  }
+
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: .8rem;
+  font-weight: bold;
+  color: #9FB0C1;
+  padding-left: 2.5rem;
+  padding-top: 1.5rem;
+}
+
+nav {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 7rem;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+
+}
+
+footer {
+  background-color: rgba(10, 10, 10, 0.8);
+  /*background-color: #222222;*/
+  color: white;
+  padding: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-media {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+
+}
+
+.small-print {
+  padding-top: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: .8rem;
+  color: white;
+  text-align: center;
+}
+
+
+.container {
+  display: flex;
+
+
+}
