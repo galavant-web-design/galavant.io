@@ -87,7 +87,7 @@ nav .actions a:not(:last-child) {
 }
 
 section {
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 2rem);
   min-height: 35rem;
 
   display: flex;
@@ -109,7 +109,7 @@ article {
 }
 
 article p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.2rem;
 }
 
@@ -119,7 +119,7 @@ article p {
   display: flex;
   flex-direction: column;
 
-  width: calc(50vh - 1rem);
+  width: calc(50vh);
   min-width: 18.5rem;
 }
 
@@ -127,12 +127,9 @@ article p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  height: calc(100vh - 2rem);
 }
 
-#banner::after {
-  background-image: url(images/ireland2.jpg);
+section.overlay::after {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -145,13 +142,36 @@ article p {
   position: absolute;
 }
 
-.call-to-action:after {
-  content: "›";
-  margin-left: .4rem;
+#banner::after {
+  background-image: url(images/ireland.jpg);
 }
 
 #about {
   background-color: #AACEC3;
+}
+
+#about::before {
+  content: '';
+  background-color: #AACEC3;
+
+  width: 4rem;
+  height: 4rem;
+  transform: rotate(45deg);
+
+  position: absolute;
+  bottom: -2rem;
+  left: 10rem;
+
+  z-index: 1;
+}
+
+#services::after {
+  background-image: url(images/giants-causeway.jpg);
+}
+
+.call-to-action:after {
+  content: "›";
+  margin-left: .4rem;
 }
 
 #tyson, #kristina {
@@ -166,10 +186,6 @@ article p {
 
 #tyson {
   background-image: url("images/tyson.jpg");
-}
-
-#process {
-  background-color: #F6EB6E;
 }
 
 footer {
