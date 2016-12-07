@@ -54,6 +54,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  z-index: 999;
 }
 
 nav .logo img {
@@ -85,12 +87,15 @@ nav .actions a:not(:last-child) {
 }
 
 section {
-  padding-left: 7rem;
-
   height: calc(100vh - 4rem);
   min-height: 35rem;
 
   display: flex;
+  position: relative;
+}
+
+section.overlay {
+  background-color: rgba(59, 79, 114, .4);
 }
 
 article {
@@ -109,22 +114,35 @@ article p {
 }
 
 .stack {
+  margin-top: -2rem;
+
   display: flex;
   flex-direction: column;
-  flex: 1;
-  /*margin-top: -2rem;*/
-  /*margin-bottom: -2rem;*/
+
+  width: calc(50vh - 1rem);
+  min-width: 18.5rem;
 }
 
 #banner {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: calc(100vh - 2rem);
+}
+
+#banner::after {
   background-image: url(images/ireland2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  content: '';
+  height: 100%;
+  width: 100%;
+
+  z-index: -1;
+  position: absolute;
 }
 
 .call-to-action:after {
@@ -133,7 +151,7 @@ article p {
 }
 
 #about {
-  background-color: #9CA3AB;
+  background-color: #AACEC3;
 }
 
 #tyson, #kristina {
@@ -151,23 +169,8 @@ article p {
 }
 
 #process {
-  background-color: #7F717E;
+  background-color: #F6EB6E;
 }
-
-.sidebar {
-  background-color: rgba(227, 197, 198, .5);
-  position: fixed;
-  width: 6rem;
-  height: 100%;
-  /*background-color: #E3C5C6;*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*flex: 1;*/
-  /*margin-top: -2rem;*/
-  /*max-height: 100%;*/
-  /*max-width: 3rem;*/
-}
-
 
 footer {
   background-color: #0D1719; /*#0A0F28;*/
