@@ -1,6 +1,4 @@
-
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Futura:400,700|Open+Sans');
 
 html {
   font-size: 16px;
@@ -11,7 +9,7 @@ html {
 }
 
 strong {
-  font-family: 'Montserrat', sans-serif; 700;
+  font-family: 'Futura', sans-serif; 700;
 }
 
 *, *:before, *:after {
@@ -24,7 +22,7 @@ body {
 
 h1 {
   font-size: 2.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Futura', sans-serif;
 
   margin-bottom: 2rem;
 }
@@ -43,7 +41,7 @@ h1 {
 h2 {
   color: black;
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Futura', sans-serif;
   text-transform: uppercase;
   text-align: center;
 
@@ -54,6 +52,7 @@ nav {
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: white;
+  border-bottom: .2rem solid #E6DF6E;
   position: fixed;
   top: 0;
   height: 4rem;
@@ -69,16 +68,8 @@ nav {
   z-index: 999;
 }
 
-nav .logo img {
-  height: 3rem;
-}
-
-nav .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-
-  display: flex;
-  align-items: center;
+nav img.logo {
+  height: 2rem;
 }
 
 nav .actions {
@@ -87,7 +78,8 @@ nav .actions {
 
 nav .actions a {
   text-decoration: none;
-  color: #646153;
+  color: #222222;
+  /*color: #646153;*/
   text-transform: uppercase;
   font-size: 1.3rem;
 }
@@ -119,7 +111,7 @@ section.call-out span {
   padding: 2rem;
   border: .6rem solid rgba(255,255,255,0.6);
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Futura', sans-serif;
   font-size: 1.7rem;
   color: #222222;
 }
@@ -177,6 +169,7 @@ ul.display {
 }
 
 #banner {
+  font-family: 'Futura', sans-serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -222,13 +215,13 @@ section.overlay::after {
 }
 
 footer {
-  background-color: #0D1719;
+  background-color: #222222;
   color: white;
   padding: 1.5rem;
 }
 
 .copyright {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Futura', sans-serif;
   font-weight: 400;
   font-size: .8rem;
   color: white;
