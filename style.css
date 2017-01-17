@@ -31,7 +31,8 @@ h1 {
   color: #E6DF6E;
 }
 
-.splash a {
+a {
+  font-family: 'Futura', sans-serif;
   color: inherit;
   text-decoration: none;
 }
@@ -122,6 +123,7 @@ article {
   flex: 2;
 
   padding: 0 4rem;
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -136,6 +138,13 @@ article.top {
 article p {
   font-size: 1.8rem;
   line-height: 2.2rem;
+}
+
+.call-to-action {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  color: #222222;
 }
 
 .stack {
@@ -224,4 +233,28 @@ footer {
   font-size: .8rem;
   color: white;
   text-align: center;
+}
+
+@media (max-width: 499px) {
+  html {
+    font-size: 14px;
+  }
+
+  #banner {
+    padding: 0 2rem;
+  }
+
+  ul.display {
+    bottom: 2rem;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  ul.display li:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .stack {
+    display: none;
+  }
 }
