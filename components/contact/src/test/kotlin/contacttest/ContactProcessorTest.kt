@@ -34,16 +34,25 @@ class ContactProcessorTest : Test({
                 .andExpect(content().contentTypeCompatibleWith(MULTIPART_FORM_DATA))
                 .andExpect(content().string(containsString("sender@example.com")))
                 .andExpect(content().string(containsString("recipient@example.com")))
-                .andExpect(content().string(containsString("Interest from interested@example.com")))
-                .andExpect(content().string(containsString("""
-        <p><strong>Message from interested@example.com:</strong></p>
-        <p>Hi there</p>
-        """)))
+                .andExpect(content().string(containsString("Interest from Fred Derf")))
+                .andExpect(content().string(containsString(
+                        """<h2>Contact</h2>
+<p>
+<strong>Name:</strong> Fred Derf<br>
+<strong>Organization:</strong> Derfco<br>
+<strong>Email:</strong> <a href="mailto:interested@example.com">interested@example.com</a><br>
+<strong>Website:</strong> <a href="http://derf.example.com">http://derf.example.com</a>
+</p>
+<h2>Message</h2>
+<p>Hi there</p>""")))
                 .andRespond(withSuccess())
 
         processor.process(Contact(
+                name = "Fred Derf",
+                organization = "Derfco",
                 email = "interested@example.com",
-                message = "Hi there"
+                message = "Hi there",
+                website = "http://derf.example.com"
         ))
 
         mockServer.verify()
