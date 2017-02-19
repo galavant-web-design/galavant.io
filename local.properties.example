@@ -1,0 +1,4 @@
+contact.mailgun.url: https://api.mailgun.net/v3/[YOUR DOMAIN]/messages
+contact.mailgun.key: YOUR-KEY
+contact.recipient.address: test@example.com
+contact.from.address: test@example.com
