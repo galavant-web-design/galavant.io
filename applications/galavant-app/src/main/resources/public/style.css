@@ -6,6 +6,10 @@ html {
     color: white;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 strong {
     font-family: futura-pt, sans-serif;
     font-weight: 500;
@@ -33,7 +37,7 @@ h2 {
 
     margin-bottom: 2rem;
 
-    color: black;
+    color: #222222;
     text-transform: uppercase;
     text-align: center;
 }
@@ -300,4 +304,109 @@ footer {
     .stack {
         display: none;
     }
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(59, 79, 114, .75);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+
+    display: none;
+}
+
+.modal-backdrop.show {
+    display: flex;
+}
+
+.modal {
+    background-color: white;
+    border-radius: .3rem;
+
+    max-height: 75vh;
+    width: 60vw;
+    position: relative;
+
+    padding: 2rem;
+
+    color: #222222;
+}
+
+.modal .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.modal .close:before {
+    content: "✖";
+    pointer-events: none;
+}
+
+.modal h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: none;
+    text-align: inherit;
+    color: #E6DF6E;
+
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    color: #666666;
+}
+
+label, input {
+    display: block;
+}
+
+label {
+    margin-left: .6rem;
+    margin-bottom: .2rem;
+}
+
+input, textarea {
+    margin-bottom: .7rem;
+}
+
+input, textarea {
+    width: 100%;
+    font-size: 1rem;
+
+    border-radius: .2rem;
+    border: 2px solid #E6DF6E;
+    padding: .4rem .6rem;
+}
+
+input:focus, textarea:focus, button:focus {
+    outline: none;
+    border-color: #222222;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    font-size: 1.2rem;
+    color: white;
+    background-color: #E6DF6E;
+
+    border: 2px solid #E6DF6E;
+    padding: .7rem .9rem;
+    border-radius: .2rem;
+    margin-top: 1rem;
+
+    cursor: pointer;
 }
