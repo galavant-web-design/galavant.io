@@ -32,21 +32,41 @@
             website: form.website.value
         };
 
-        postJSON("/contact", contactInfo);
+        postJSON("/contact", contactInfo).then(function () {
+            doneModal("get-in-touch");
+        });
 
         form.reset();
-        closeModal("get-in-touch");
+        waitModal("get-in-touch");
     });
 
     function postJSON(location, contactInfo) {
         var headers = new Headers();
         headers.append("Content-Type", "application/json");
 
-        fetch(location, {
+        return fetch(location, {
             method: "POST",
             headers: headers,
             body: JSON.stringify(contactInfo)
         });
+    }
+
+    function waitModal(modalName) {
+        var modalElement = document.querySelector("[data-modal=\"" + modalName + "\"] .modal");
+
+        modalElement.classList.add("waiting")
+    }
+
+    function doneModal(modalName) {
+        var modalElement = document.querySelector("[data-modal=\"" + modalName + "\"] .modal");
+
+        modalElement.classList.remove("waiting");
+        modalElement.classList.add("done");
+
+        setTimeout(function () {
+            modalElement.classList.remove("done");
+            closeModal(modalName);
+        }, 1000)
     }
 
     function closeModal(modalName) {
