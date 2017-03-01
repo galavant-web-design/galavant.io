@@ -15,7 +15,7 @@
         element.addEventListener("click", function (event) {
             event.preventDefault();
 
-            closeModal(modalName);
+            closeModalName(modalName);
         })
     });
 
@@ -40,6 +40,13 @@
         waitModal("get-in-touch");
     });
 
+    document.onkeydown = function (event) {
+        event = event || window.event;
+        if (event.keyCode == 27) {
+            closeAllModals();
+        }
+    };
+
     function postJSON(location, contactInfo) {
         var headers = new Headers();
         headers.append("Content-Type", "application/json");
@@ -62,9 +69,19 @@
         modal.classList.add("done");
     }
 
-    function closeModal(modalName) {
+    function closeAllModals() {
+        document.querySelectorAll("[data-modal]").forEach(function (modal) {
+            closeModal(modal);
+        });
+    }
+
+    function closeModalName(modalName) {
         var modal = findModal(modalName);
 
+        closeModal(modal);
+    }
+
+    function closeModal(modal) {
         modal.classList.add("fade");
 
         setTimeout(function () {
