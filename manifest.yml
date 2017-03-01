@@ -1,0 +1,5 @@
+---
+applications:
+- name: galavant
+  path: applications/galavant-app/build/libs/applications/galavant-app-1.0.jar
+  buildpack: java_buildpack
