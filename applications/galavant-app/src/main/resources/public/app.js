@@ -52,34 +52,35 @@
     }
 
     function waitModal(modalName) {
-        var modalElement = document.querySelector("[data-modal=\"" + modalName + "\"] .modal");
-
-        modalElement.classList.add("waiting")
+        findModal(modalName).classList.add("waiting");
     }
 
     function doneModal(modalName) {
-        var modalElement = document.querySelector("[data-modal=\"" + modalName + "\"] .modal");
+        var modal = findModal(modalName);
 
-        modalElement.classList.remove("waiting");
-        modalElement.classList.add("done");
-
-        setTimeout(function () {
-            modalElement.classList.remove("done");
-            closeModal(modalName);
-        }, 1000)
+        modal.classList.remove("waiting");
+        modal.classList.add("done");
     }
 
     function closeModal(modalName) {
-        var modalElement = document.querySelector("[data-modal=\"" + modalName + "\"]");
+        var modal = findModal(modalName);
 
-        document.querySelector("body").classList.remove("no-scroll");
-        modalElement.classList.remove("show")
+        modal.classList.add("fade");
+
+        setTimeout(function () {
+            document.querySelector("body").classList.remove("no-scroll");
+            modal.classList.remove("fade");
+            modal.classList.remove("show");
+            modal.classList.remove("done");
+        }, 250);
     }
 
     function showModal(modalName) {
-        var modalElement = document.querySelector("[data-modal=\"" + modalName + "\"]");
-
         document.querySelector("body").classList.add("no-scroll");
-        modalElement.classList.add("show")
+        findModal(modalName).classList.add("show");
+    }
+
+    function findModal(modalName) {
+        return document.querySelector("[data-modal=\"" + modalName + "\"]");
     }
 })();
