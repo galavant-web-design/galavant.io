@@ -293,7 +293,7 @@ footer {
 
     height: 0;
     opacity: 0;
-    transition: opacity .25s;
+    transition: opacity .5s;
 }
 
 .modal-backdrop.show {
@@ -340,7 +340,7 @@ footer {
     margin-bottom: 1rem;
 }
 
-p {
+.modal p {
     margin-bottom: 1.2rem;
     color: #666666;
 }

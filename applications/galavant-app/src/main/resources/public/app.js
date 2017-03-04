@@ -89,7 +89,7 @@
             modal.classList.remove("fade");
             modal.classList.remove("show");
             modal.classList.remove("done");
-        }, 250);
+        }, 500);
     }
 
     function showModal(modalName) {

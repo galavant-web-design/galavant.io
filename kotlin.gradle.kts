@@ -1,11 +1,6 @@
-import org.gradle.api.artifacts.repositories.MavenArtifactRepository
-
 repositories {
     mavenCentral()
     jcenter()
-    maven(closureOf<MavenArtifactRepository>({
-        setUrl("http://dl.bintray.com/kotlin/kotlin-eap-1.1")
-    }))
 }
 
 apply {
@@ -13,7 +8,7 @@ apply {
 }
 
 dependencies {
-    compile(kotlinModule("stdlib", "1.1.0-rc-91"))
+    compile(kotlinModule("stdlib", "1.1.0"))
 
     testCompile("io.damo.aspen:aspen:2.0.0")
     testCompile("org.assertj:assertj-core:3.6.2")

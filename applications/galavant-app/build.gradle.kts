@@ -1,9 +1,20 @@
-import org.gradle.api.tasks.JavaExec
 import java.io.FileInputStream
 import java.util.*
+import org.springframework.boot.gradle.run.BootRunTask
 
 group = "io.galavant"
 version = "1.0"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE")
+    }
+}
+
 
 apply {
     from("$rootDir/kotlin.gradle.kts")
@@ -16,9 +27,11 @@ val localProperties = Properties().let {
     it as Map<String, Any>
 }
 
-project.tasks.findByPath("bootRun")?.configure(closureOf<JavaExec> {
-    environment = localProperties
-})
+tasks.getByPath("bootRun")
+    .configure(closureOf<BootRunTask> {
+        addResources = true
+        environment = localProperties
+    })
 
 dependencies {
     compile(project(":components/contact"))
