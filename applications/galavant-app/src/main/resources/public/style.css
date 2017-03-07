@@ -85,8 +85,20 @@ nav {
     z-index: 999;
 }
 
-nav img.logo {
+nav .title {
     height: 2rem;
+    display: flex;
+}
+
+nav .title img {
+    height: 100%;
+}
+
+nav .title h1 {
+    color: #222222;
+    margin: 0 0 0 .4rem;
+    font-weight: 500;
+    font-size: 1.8rem;
 }
 
 nav .actions {
