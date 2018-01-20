@@ -26,13 +26,13 @@ open class AppConfig {
 
     @Bean
     open fun contactProcessor(restOperations: RestOperations) =
-            ContactProcessor(
-                    restOperations = restOperations,
-                    mailgunUrl = mailgunUrl,
-                    mailgunKey = mailgunKey,
-                    recipientAddress = recipientAddress,
-                    fromAddress = fromAddress
-            )
+        ContactProcessor(
+            restOperations = restOperations,
+            mailgunUrl = mailgunUrl,
+            mailgunKey = mailgunKey,
+            recipientAddress = recipientAddress,
+            fromAddress = fromAddress
+        )
 
     @Bean
     open fun objectMapper() = jacksonObjectMapper()

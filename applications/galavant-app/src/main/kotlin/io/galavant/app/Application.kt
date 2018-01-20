@@ -6,8 +6,8 @@ import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
 @ComponentScan(basePackages = arrayOf(
-        "io.galavant.app",
-        "io.galavant.contact"
+    "io.galavant.app",
+    "io.galavant.contact"
 ))
 open class Application
 

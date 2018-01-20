@@ -11,18 +11,18 @@ import java.util.Base64.getEncoder
 
 
 class ContactProcessor(
-        val restOperations: RestOperations,
-        val mailgunUrl: String,
-        mailgunKey: String,
-        val recipientAddress: String,
-        val fromAddress: String
+    val restOperations: RestOperations,
+    val mailgunUrl: String,
+    mailgunKey: String,
+    val recipientAddress: String,
+    val fromAddress: String
 ) {
     val credentials = "api:$mailgunKey"
 
     fun process(contact: Contact) {
         val request = HttpEntity(
-                buildBody(contact),
-                buildHeaders()
+            buildBody(contact),
+            buildHeaders()
         )
 
         restOperations.exchange(mailgunUrl, POST, request, String::class.java)
@@ -42,7 +42,7 @@ class ContactProcessor(
 
     @Language("HTML")
     private fun buildMessage(contact: Contact)
-            = """<h2>Contact</h2>
+        = """<h2>Contact</h2>
 <p>
 <strong>Name:</strong> ${contact.name}<br>
 <strong>Organization:</strong> ${contact.organization}<br>
