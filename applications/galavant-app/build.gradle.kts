@@ -37,5 +37,6 @@ dependencies {
     "compile"(project(":components:contact"))
 
     "compile"("org.springframework.boot:spring-boot-starter-web")
+    "compile"("org.springframework.boot:spring-boot-starter-security")
     "compile"("com.fasterxml.jackson.module:jackson-module-kotlin:${extra["jacksonVersion"]}")
 }
