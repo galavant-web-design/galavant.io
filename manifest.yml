@@ -1,5 +1,10 @@
 ---
 applications:
 - name: galavant
-  path: applications/galavant-app/build/libs/applications/galavant-app-1.0.jar
+  path: applications/galavant-app/build/libs/galavant-app-1.0.jar
   buildpack: java_buildpack
+  routes:
+  - route: galavant.io
+  - route: www.galavant.io
+  env:
+    SECURITY_FORCE_HTTPS: true
