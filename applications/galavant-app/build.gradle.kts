@@ -11,7 +11,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
     }
 }
 
@@ -34,8 +34,8 @@ tasks.getByPath("bootRun")
     })
 
 dependencies {
-    compile(project(":components/contact"))
+    "compile"(project(":components:contact"))
 
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("com.fasterxml.jackson.module:jackson-module-kotlin:${extra["jacksonVersion"]}")
+    "compile"("org.springframework.boot:spring-boot-starter-web")
+    "compile"("com.fasterxml.jackson.module:jackson-module-kotlin:${extra["jacksonVersion"]}")
 }
