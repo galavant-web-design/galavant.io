@@ -15,5 +15,7 @@ open class SecurityConfig : WebSecurityConfigurerAdapter() {
         if (forceHttps == "true") {
             http.requiresChannel().anyRequest().requiresSecure()
         }
+
+        http.csrf().disable()
     }
 }
