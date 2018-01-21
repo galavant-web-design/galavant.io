@@ -11,13 +11,13 @@ import java.util.Base64.getEncoder
 
 
 class ContactProcessor(
-    val restOperations: RestOperations,
-    val mailgunUrl: String,
-    mailgunKey: String,
-    val recipientAddress: String,
-    val fromAddress: String
+    private val restOperations: RestOperations,
+    private val mailgunUrl: String,
+    private val fromAddress: String,
+    private val recipientAddress: String,
+    mailgunKey: String
 ) {
-    val credentials = "api:$mailgunKey"
+    private val credentials = "api:$mailgunKey"
 
     fun process(contact: Contact) {
         val request = HttpEntity(
@@ -53,9 +53,6 @@ class ContactProcessor(
 <p>${contact.message}</p>"""
 }
 
-fun String.base64Encode(): String {
-    val plainCredentials = this.toByteArray()
-    val base64CredsBytes = getEncoder().encode(plainCredentials)
-    val base64Creds = String(base64CredsBytes)
-    return base64Creds
+fun String.base64Encode() = let {
+    String(getEncoder().encode(it.toByteArray()))
 }

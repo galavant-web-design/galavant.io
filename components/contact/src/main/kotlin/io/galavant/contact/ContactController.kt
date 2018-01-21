@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("contact")
-class ContactController(val contactProcessor: ContactProcessor) {
+class ContactController(
+    private val contactProcessor: ContactProcessor
+) {
 
     @PostMapping
     @ResponseStatus(NO_CONTENT)
