@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>galavant | web design &amp; development</title>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113543835-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113543835-1');
+    </script>
+
+
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -68,8 +79,8 @@
 </nav>
 
 <section id="banner" class="overlay splash">
-    <h1>galavant is a web design agency<br>serving local and international clients.</h1>
-    <a href="#" data-modal-show="get-in-touch">Let's galavant <i class="fa fa-angle-right"></i></a>
+    <h1>Galavant is a web design agency<br>serving local and international clients.</h1>
+    <a href="#" data-modal-show="get-in-touch">Let's Galavant <i class="fa fa-angle-right"></i></a>
 </section>
 
 <section class="call-out">
@@ -159,7 +170,11 @@
 
 <footer>
     <div class="copyright">
-        <p>copyright 2017, galavant llc</p>
+        <p>
+            copyright
+            <script>document.write(new Date().getFullYear());</script>,
+            galavant llc
+        </p>
     </div>
 </footer>
 

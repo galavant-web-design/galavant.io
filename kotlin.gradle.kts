@@ -8,7 +8,7 @@ apply {
 }
 
 dependencies {
-    "compile"("org.jetbrains.kotlin:kotlin-stdlib-jre8:1.2.10")
+    "compile"("org.jetbrains.kotlin:kotlin-stdlib-jre8:1.2.31")
 
     "testCompile"("io.damo.aspen:aspen:2.0.0")
     "testCompile"("org.assertj:assertj-core:3.6.2")
