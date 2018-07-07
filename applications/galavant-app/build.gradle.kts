@@ -1,6 +1,6 @@
 import java.io.FileInputStream
 import java.util.*
-import org.springframework.boot.gradle.run.BootRunTask
+import org.springframework.boot.gradle.tasks.run.BootRun
 
 group = "io.galavant"
 version = "1.0"
@@ -11,7 +11,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
     }
 }
 
@@ -28,15 +28,14 @@ val localProperties = Properties().let {
 }
 
 tasks.getByPath("bootRun")
-    .configure(closureOf<BootRunTask> {
-        addResources = true
+    .configure(closureOf<BootRun> {
         environment = localProperties
     })
 
 dependencies {
     "compile"(project(":components:contact"))
 
-    "compile"("org.springframework.boot:spring-boot-starter-web")
-    "compile"("org.springframework.boot:spring-boot-starter-security")
+    "compile"("org.springframework.boot:spring-boot-starter-web:${extra["springBootVersion"]}")
+    "compile"("org.springframework.boot:spring-boot-starter-security:${extra["springBootVersion"]}")
     "compile"("com.fasterxml.jackson.module:jackson-module-kotlin:${extra["jacksonVersion"]}")
 }
