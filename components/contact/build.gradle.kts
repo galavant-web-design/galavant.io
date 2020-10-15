@@ -1,9 +1,7 @@
-apply {
-    from("$rootDir/kotlin.gradle.kts")
-}
+val springVersion: String by extra
 
 dependencies {
-    "compile"("org.springframework:spring-web:${extra["springVersion"]}")
+    "compile"("org.springframework:spring-web:$springVersion")
 
-    "testCompile"("org.springframework:spring-test:${extra["springVersion"]}")
+    "testCompile"("org.springframework:spring-test:$springVersion")
 }
